@@ -25,3 +25,6 @@ CTestTestfile.cmake
 
 *.log
 *.tmp
+
+/.vscode/
+/.vscode-*/

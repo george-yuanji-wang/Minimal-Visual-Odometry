@@ -8,9 +8,9 @@
 #include <tuple>
 #include <string>
 #include <iostream>
-#include <tuple>    // NEW
-#include <set>      // NEW
-#include <algorithm>// NEW
+#include <tuple>    
+#include <set>      
+#include <algorithm>
 
 static bool parse_assoc_list(const std::string& list_path,
                              std::vector<std::pair<double,std::string>>& out)
@@ -86,7 +86,7 @@ static std::vector<AssocPair> associate_rgb_depth(
 
 int main()
 {
-    const std::string DATA_DIR  = "/Users/georgeilli/Downloads/rgbd_dataset_freiburg2_pioneer_slam";
+    const std::string DATA_DIR  = "/Users/georgeilli/Downloads/rgbd_dataset_freiburg1_xyz";
     const std::string rgb_list  = DATA_DIR + "/rgb.txt";
     const std::string depth_list= DATA_DIR + "/depth.txt";
     const std::string gt_path   = DATA_DIR + "/groundtruth.txt";
