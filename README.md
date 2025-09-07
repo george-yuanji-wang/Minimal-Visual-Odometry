@@ -16,7 +16,7 @@ Clone the repository and build from source:
 
 ```bash
 git clone https://github.com/george-yuanji-wang/Minimal-Visual-Odometry.git
-cd your-repo-name
+cd Minimal-Visual-Odometry
 mkdir build
 cd build
 cmake ..
