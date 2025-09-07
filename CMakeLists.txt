@@ -56,18 +56,14 @@ add_library(${PROJECT_NAME}
   src/vo_core/feature_matcher.cpp
   src/vo_core/pose_estimator.cpp
   src/vo_core/vo_pipeline.cpp
-  src/vo_core/feature_matcher_map.cpp
-  src/map/map.cpp
   src/geometry/geometry.cpp
-  src/vo_core/slam_pipeline.cpp
-  src/map/g2o.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
   PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${G2O_INCLUDE_DIR}
-    /opt/homebrew/include            # helps on macOS/Homebrew
+    /opt/homebrew/include            
 )
 
 target_link_libraries(${PROJECT_NAME}
@@ -80,7 +76,6 @@ target_link_libraries(${PROJECT_NAME}
     ${G2O_SOLVER_DENSE}
 )
 
-# Link the type modules you use (link BOTH when available)
 if (G2O_TYPES_SBA)
   target_link_libraries(${PROJECT_NAME} PUBLIC ${G2O_TYPES_SBA})
 endif()
@@ -107,5 +102,3 @@ target_link_libraries(tum_vo_only PRIVATE vo_core)
 add_executable(parameters_tune test/parameters_tune.cpp)
 target_link_libraries(parameters_tune PRIVATE vo_core)
 
-add_executable(tum_slam_nBA test/tum_slam_nBA.cpp)
-target_link_libraries(tum_slam_nBA PRIVATE vo_core)
